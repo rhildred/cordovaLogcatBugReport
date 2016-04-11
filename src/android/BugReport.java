@@ -1,18 +1,18 @@
-package com.example.plugin;
+package io.github.rhildred.cordovabugreport;
 
 import org.apache.cordova.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-public class Hello extends CordovaPlugin {
+public class BugReport extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
 
-        if (action.equals("greet")) {
+        if (action.equals("report")) {
 
-            String name = data.getString(0);
-            String message = "Hello, " + name;
+            String reportername = data.getString(0);
+            String message = "Hello, " + reportername;
             callbackContext.success(message);
 
             return true;
